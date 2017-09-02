@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  laptimes:
+    volumes:
+      - source: ./laptimes-config.json
+        target: /usr/src/app/config.json
+        type: bind
+        read_only: true
+  telegram:
+    volumes:
+      - source: ./telegram-config.json
+        target: /usr/src/app/config.json
+        type: bind
+        read_only: true
