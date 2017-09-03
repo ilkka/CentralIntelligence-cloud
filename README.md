@@ -55,7 +55,7 @@ Create the following files in the same directory as the compose files, with the 
 Just run
 
 ```sh
-$ env FMI_APIKEY="your-api-key" docker-compose up
+env FMI_APIKEY="your-api-key" docker-compose up
 ```
 
 and you should end up with a functioning server that you can talk to yourself on the Docker host on port 3000. Ask your bot for the weather at some place, for example in Tampere. Be amazed.
@@ -67,13 +67,13 @@ All the other services also publish some ports just for development and debuggin
 Build and push the images with
 
 ```sh
-$ docker-compose build && docker-compose push
+docker-compose build && docker-compose push
 ```
 
 Then deploy the stack with
 
 ```sh
-$ env FMI_APIKEY="your-api-key" docker stack deploy -c docker-compose.yml central-intelligence
+env FMI_APIKEY="your-api-key" docker stack deploy -c docker-compose.yml central-intelligence
 ```
 
 ## How's it work then
