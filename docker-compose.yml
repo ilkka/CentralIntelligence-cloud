@@ -83,6 +83,24 @@ services:
       - source: weather-config
         target: /usr/src/app/config.js
     command: ["./wait-for-it.sh", "server:3000", "--", "npm", "start"]
+  # voicebot:
+  #   build: ../CentralIntelligence-voicebot
+  #   image: 016372371071.dkr.ecr.eu-central-1.amazonaws.com/centralintelligence-voicebot
+  #   ports:
+  #     - 3004:3000
+  #   depends_on:
+  #     - server
+  #   environment:
+  #     SERVER_HOST: server
+  #     MY_HOST: voicebot
+  #   deploy:
+  #     replicas: 1
+  #     update_config:
+  #       parallelism: 1
+  #       delay: 10s
+  #   secrets:
+  #     - source: voicebot-authkey
+  #       target: authkey
 
 secrets:
   server-authkey:
@@ -95,6 +113,8 @@ secrets:
     file: ./weather-authkey
   weather-fmi-apikey:
     file: ./fmi-apikey
+  # voicebot-authkey:
+  #   file: ./voicebot-authkey
 
 configs:
   laptimes-config:

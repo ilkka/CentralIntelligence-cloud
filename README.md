@@ -4,9 +4,7 @@ This repo contains orchestration stuff for the Central Intelligence thingy.
 
 ## Contents
 
-`docker-compose.yml` -- a v3 compose file that can be used to deploy the server and a bunch of clients onto a Docker Swarm. The image tags point at a particular Elastic Container Registry, you will probably want to change those.
-
-`docker-compose.with-voicebot.yml` -- like `docker-compose.yml` except also adds the voice bot. Probably your Docker Swarm doesn't have audio though.
+`docker-compose.yml` -- a v3 compose file that can be used to deploy the server and a bunch of clients onto a Docker Swarm. The image tags point at a particular Elastic Container Registry, you will probably want to change those. The voicebot is commented out because probably your Docker Swarm doesn't have audio.
 
 `docker-compose.override.yml` -- an override file that allows running all the bits in `docker-compose.yml` on a normal Docker engine that is not part of a Swarm.
 
