@@ -11,6 +11,9 @@ services:
       update_config:
         parallelism: 1
         delay: 10s
+    secrets:
+      - source: server-authkey
+        target: authkey
   laptimes:
     build: ../CentralIntelligence-laptimes
     image: 016372371071.dkr.ecr.eu-central-1.amazonaws.com/centralintelligence-laptimes
@@ -74,6 +77,8 @@ services:
         target: authkey
 
 secrets:
+  server-authkey:
+    file: ./server-authkey
   laptimes-authkey:
     file: ./laptimes-authkey
   telegram-authkey:
