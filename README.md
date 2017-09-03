@@ -40,20 +40,16 @@ Create the following files in the same directory as the compose files, with the 
 }
 ```
 
-`telegram-config.json` -- a JSON object like this:
+`telegram-bot-apikey` -- a plain text file with only the bot API key from @botfather
 
-```json
-{
-    "apikey": "the API key from @botfather"
-}
-```
+`fmi-apikey` -- a plain text file with only the FMI API key
 
 ### Running in non-swarm mode
 
 Just run
 
 ```sh
-env FMI_APIKEY="your-api-key" docker-compose up
+docker-compose up
 ```
 
 and you should end up with a functioning server that you can talk to yourself on the Docker host on port 3000. Ask your bot for the weather at some place, for example in Tampere. Be amazed.
@@ -71,7 +67,7 @@ docker-compose build && docker-compose push
 Then deploy the stack with
 
 ```sh
-env FMI_APIKEY="your-api-key" docker stack deploy -c docker-compose.yml central-intelligence
+docker stack deploy -c docker-compose.yml central-intelligence
 ```
 
 ## How's it work then

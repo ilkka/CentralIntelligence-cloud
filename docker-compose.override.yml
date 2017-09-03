@@ -9,8 +9,8 @@ services:
         read_only: true
   telegram:
     volumes:
-      - source: ./telegram-config.json
-        target: /usr/src/app/config.json
+      - source: ./telegram-config.js
+        target: /usr/src/app/config.js
         type: bind
         read_only: true
   weather:

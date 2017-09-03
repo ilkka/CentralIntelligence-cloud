@@ -54,9 +54,11 @@ services:
     secrets:
       - source: telegram-authkey
         target: authkey
+      - source: telegram-bot-apikey
+        target: telegram-bot-apikey
     configs:
       - source: telegram-config
-        target: /usr/src/app/config.json
+        target: /usr/src/app/config.js
     command: ["./wait-for-it.sh", "server:3000", "--", "npm", "start"]
   weather:
     build: ../CentralIntelligence-weather
@@ -109,6 +111,8 @@ secrets:
     file: ./laptimes-authkey
   telegram-authkey:
     file: ./telegram-authkey
+  telegram-bot-apikey:
+    file: ./telegram-bot-apikey
   weather-authkey:
     file: ./weather-authkey
   weather-fmi-apikey:
@@ -120,6 +124,6 @@ configs:
   laptimes-config:
     file: ./laptimes-config.json
   telegram-config:
-    file: ./telegram-config.json
+    file: ./telegram-config.js
   weather-config:
     file: ./weather-config.js
