@@ -13,3 +13,9 @@ services:
         target: /usr/src/app/config.json
         type: bind
         read_only: true
+  weather:
+    volumes:
+      - source: ./weather-config.js
+        target: /usr/src/app/config.js
+        type: bind
+        read_only: true

@@ -77,6 +77,11 @@ services:
     secrets:
       - source: weather-authkey
         target: authkey
+      - source: weather-fmi-apikey
+        target: fmi-apikey
+    configs:
+      - source: weather-config
+        target: /usr/src/app/config.js
     command: ["./wait-for-it.sh", "server:3000", "--", "npm", "start"]
 
 secrets:
@@ -88,9 +93,13 @@ secrets:
     file: ./telegram-authkey
   weather-authkey:
     file: ./weather-authkey
+  weather-fmi-apikey:
+    file: ./fmi-apikey
 
 configs:
   laptimes-config:
     file: ./laptimes-config.json
   telegram-config:
     file: ./telegram-config.json
+  weather-config:
+    file: ./weather-config.js
