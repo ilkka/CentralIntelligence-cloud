@@ -30,7 +30,7 @@ Get an instance of the fabled laptimes service.
 
 Create the following files in the same directory as the compose files, with the following contents:
 
-`laptimes-authkey`, `telegram-authkey`, `voicebot-authkey` and `weather-authkey` -- plain text files that contain only the auth keys these clients use when talking to the server.
+`server-authkey`, `laptimes-authkey`, `telegram-authkey`, `voicebot-authkey` and `weather-authkey` -- plain text files that contain only the auth key used between each service and the server.
 
 `laptimes-config.json` -- a JSON object like this:
 
